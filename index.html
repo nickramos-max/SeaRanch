@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>The Glass House &middot; 242 Bluff Reach, Sea Ranch — Presented by Naomi Glass</title>
+<meta name="description" content="The Glass House &middot; 242 Bluff Reach, Sea Ranch, CA 95497 — 2 bed / 2 bath vacation rental with a 10-mile white-water ocean view. Presented by Naomi Glass, Coldwell Banker.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --coal: #24261F;
+  --teal: #3A4A3E;
+  --teal-mid: #4A5C4E;
+  --gold: #A98A54;
+  --gold-light: #C2A470;
+  --cream: #F7F5EF;
+  --text-mid: #5E5C52;
+  --text-light: #918F82;
+  --border: rgba(169,138,84,0.2);
+  --font-display: 'Bodoni Moda', serif;
+  --font-accent: 'Cormorant Garamond', serif;
+  --font-body: 'Jost', sans-serif;
+  --nav-h: 100px;
+  --ease: cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--coal);background:#fff;}
+
+#scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));width:0%;z-index:1001;transition:width 0.08s linear;}
+
+#top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:transparent;border-bottom:1px solid transparent;transition:background 0.35s ease,border-color 0.35s ease;}#top-nav.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);border-bottom:1px solid rgba(0,0,0,0.08);}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0.5rem 2.5rem;min-height:var(--nav-h);gap:0.35rem;}
+.nav-links{display:flex;gap:0;list-style:none;}
+.nav-links a{display:block;padding:0.5rem 1.2rem;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.25s var(--ease);font-weight:500;}#top-nav.scrolled .nav-links a{color:rgba(36,38,31,0.65);}#top-nav.scrolled .nav-links a:hover,#top-nav.scrolled .nav-links a.active{color:var(--gold);}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-hamburger{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;}#top-nav.scrolled .nav-hamburger{color:var(--coal);}
+.nav-wordmark{font-family:var(--font-accent);font-size:1rem;font-style:italic;color:#fff;opacity:0;transition:opacity 0.35s ease,color 0.35s ease;text-align:center;letter-spacing:0.02em;}#top-nav.scrolled .nav-wordmark{opacity:1;color:var(--coal);}
+
+#hero{position:relative;min-height:100vh;background:url('images/photo-24.jpg') center/cover no-repeat;display:flex;align-items:center;overflow:hidden;}
+#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(36,38,31,0.93) 0%,rgba(36,38,31,0.5) 45%,rgba(36,38,31,0.22) 100%);z-index:1;}
+#hero::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(36,38,31,0.55) 0%,transparent 60%);z-index:1;}
+.hero-content{position:relative;z-index:10;width:100%;max-width:800px;margin:0 auto;padding:0 2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-align:center;}
+.hero-left{width:100%;}
+.coming-soon-pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(58,74,62,0.88);backdrop-filter:blur(4px);color:#fff;font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;padding:0.4rem 1rem;margin-bottom:1.75rem;font-weight:700;}
+.coming-soon-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:#fff;animation:live-pulse 1.6s ease-in-out infinite;}
+@keyframes live-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+.hero-eyebrow{font-size:0.68rem;font-weight:500;color:var(--gold);letter-spacing:0.28em;text-transform:uppercase;margin-bottom:0.9rem;text-align:center;}
+h1.hero-subaddress{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,4rem);font-weight:400;color:#fff;line-height:1.05;margin-bottom:0.4rem;letter-spacing:-0.015em;}
+.hero-city{font-family:var(--font-accent);font-size:clamp(1rem,1.8vw,1.4rem);font-weight:400;color:rgba(255,255,255,0.5);font-style:italic;letter-spacing:0.04em;margin-bottom:0;}
+.hero-stats-row{display:flex;gap:2.5rem;}
+.hero-stat-val{font-family:var(--font-display);font-size:1.7rem;color:#fff;display:block;line-height:1;margin-bottom:0.3rem;}
+.hero-stat-label{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:500;}
+.hero-price-block{text-align:center;border-left:none;border-top:1px solid rgba(169,138,84,0.3);padding-top:2rem;margin-top:2rem;width:100%;}
+.hero-price-label{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;font-weight:500;text-align:center;}
+.hero-price{font-family:var(--font-display);font-size:clamp(1.4rem,2.6vw,2.2rem);font-weight:400;color:var(--gold);line-height:1;letter-spacing:-0.01em;margin-bottom:1.75rem;}
+.hero-cta-group{display:flex;flex-direction:row;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.hero-cta{padding:0.85rem 2rem;font-family:var(--font-body);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;cursor:pointer;text-decoration:none;display:block;text-align:center;transition:all 0.25s var(--ease);}
+.hero-cta-primary{background:var(--gold);color:var(--coal);border:2px solid var(--gold);}
+.hero-cta-primary:hover{background:var(--gold-light);border-color:var(--gold-light);}
+.hero-cta-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.3);}
+.hero-cta-secondary:hover{border-color:rgba(255,255,255,0.7);}
+.hero-scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.28);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;z-index:10;animation:float-hint 2.5s ease-in-out infinite;}
+.scroll-mouse{width:22px;height:34px;border:1px solid rgba(255,255,255,0.2);border-radius:12px;display:flex;justify-content:center;padding-top:5px;}
+.scroll-wheel{width:2px;height:6px;background:var(--gold);border-radius:2px;animation:wheel-drop 2s ease-in-out infinite;}
+@keyframes float-hint{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(5px);}}
+@keyframes wheel-drop{0%{transform:translateY(0);opacity:1;}100%{transform:translateY(9px);opacity:0;}}
+
+#stats-ticker{background:#fff;border-top:1px solid rgba(0,0,0,0.07);border-bottom:1px solid rgba(0,0,0,0.07);}
+.stats-ticker-inner{max-width:1280px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:repeat(4,1fr);}
+.ticker-stat{height:140px;padding:0 1.5rem;border-right:1px solid rgba(0,0,0,0.07);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.ticker-stat:last-child{border-right:none;}
+.ticker-val{font-family:var(--font-display);font-size:2.1rem;color:var(--coal);line-height:1;margin-bottom:0.45rem;letter-spacing:-0.01em;}
+.ticker-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(36,38,31,0.5);font-weight:500;text-align:center;}
+
+section{scroll-margin-top:var(--nav-h);}
+.section-inner{max-width:1280px;margin:0 auto;padding:6rem 2.5rem;}
+.section-eyebrow{display:flex;align-items:center;gap:1rem;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;font-weight:700;}
+.section-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold);flex-shrink:0;}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;color:var(--coal);margin-bottom:3rem;line-height:1.15;letter-spacing:-0.01em;}
+.section-title--light{color:var(--coal);}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.rd1{transition-delay:0.1s;}.rd2{transition-delay:0.2s;}.rd3{transition-delay:0.3s;}.rd4{transition-delay:0.4s;}.rd5{transition-delay:0.5s;}
+
+#details{background:var(--cream);}
+.details-body{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start;}
+.details-description p{font-size:1rem;line-height:1.9;color:var(--text-mid);font-weight:300;margin-bottom:1.3rem;}
+
+.key-facts{background:#fff;border:1px solid rgba(0,0,0,0.07);padding:2.25rem;}
+.key-facts-header{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(0,0,0,0.06);}
+.key-fact-row{display:flex;justify-content:space-between;align-items:center;padding:0.8rem 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+.kf-key{font-size:0.82rem;color:var(--text-light);font-weight:400;}
+.kf-val{font-size:0.88rem;color:var(--coal);font-weight:500;text-align:right;}
+.mls-badge{margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(0,0,0,0.06);font-size:0.68rem;color:var(--text-light);letter-spacing:0.05em;}
+
+#features{background:#fff;}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,0.06);}
+.feature-item{background:#fff;padding:2.5rem 2rem;transition:background 0.3s;}
+.feature-item:hover{background:var(--cream);}
+.feature-icon{font-size:1.8rem;margin-bottom:1.1rem;display:block;}
+.feature-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.55rem;font-weight:700;}
+.feature-desc{font-size:0.9rem;color:var(--text-mid);line-height:1.7;font-weight:300;}
+
+#gallery{background:var(--cream);padding:5rem 0;}
+.gallery-header{max-width:1280px;margin:0 auto;padding:0 2.5rem 2.5rem;display:flex;align-items:flex-end;justify-content:space-between;}
+.gallery-title{font-family:var(--font-display);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:400;color:var(--coal);letter-spacing:-0.01em;}
+.gallery-subtitle{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(36,38,31,0.45);font-weight:500;}
+.carousel-wrap{max-width:1280px;margin:0 auto;padding:0 2.5rem;position:relative;}
+.carousel-viewport{overflow:hidden;position:relative;border:1px solid rgba(169,138,84,0.1);cursor:grab;}
+.carousel-viewport:active{cursor:grabbing;}
+.carousel-track{display:flex;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);will-change:transform;}
+.carousel-slide{flex:0 0 100%;width:100%;height:60vh;max-height:600px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#1b1d17;}
+.carousel-slide img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;transition:transform 0.6s ease;background:#15170f;}
+.carousel-slide:hover img{transform:none;}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(36,38,31,0.72);backdrop-filter:blur(4px);border:1px solid rgba(169,138,84,0.18);color:var(--gold);width:48px;height:48px;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.25s var(--ease);z-index:10;}
+.carousel-btn:hover{background:var(--gold);color:var(--coal);border-color:var(--gold);}
+.carousel-prev{left:1rem;}.carousel-next{right:1rem;}
+.carousel-counter{position:absolute;bottom:1rem;right:1rem;background:rgba(36,38,31,0.72);backdrop-filter:blur(4px);color:rgba(255,255,255,0.65);font-size:0.62rem;letter-spacing:0.12em;padding:0.35rem 0.75rem;z-index:10;font-weight:500;}
+.expand-btn{position:absolute;bottom:1rem;left:1rem;background:rgba(36,38,31,0.72);backdrop-filter:blur(4px);border:none;color:rgba(255,255,255,0.5);width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;z-index:10;transition:color 0.25s;}
+.expand-btn:hover{color:var(--gold);}
+.carousel-dots{display:flex;justify-content:center;flex-wrap:wrap;gap:0.5rem;padding:1.5rem 0 0;}
+.carousel-dot{width:20px;height:2px;background:rgba(169,138,84,0.22);border:none;cursor:pointer;transition:background 0.25s,transform 0.25s;padding:0;}
+.carousel-dot.active{background:var(--gold);transform:scaleX(1.4);}
+.carousel-thumbs{display:flex;gap:4px;margin-top:4px;overflow-x:auto;scrollbar-width:none;}
+.carousel-thumbs::-webkit-scrollbar{display:none;}
+.carousel-thumb{min-width:90px;height:60px;cursor:pointer;background:#1b1d17;border:2px solid transparent;display:flex;align-items:center;justify-content:center;font-size:1.1rem;opacity:0.42;transition:all 0.25s var(--ease);flex-shrink:0;overflow:hidden;}
+.carousel-thumb img{width:100%;height:100%;object-fit:contain;background:#1b1d17;}
+.carousel-thumb.active{border-color:var(--gold);opacity:1;}
+.carousel-thumb:hover{opacity:0.8;}
+.gallery-note{max-width:1280px;margin:1.5rem auto 0;padding:0 2.5rem;font-size:0.7rem;color:rgba(36,38,31,0.4);letter-spacing:0.05em;}
+
+#lightbox{display:none;position:fixed;inset:0;background:rgba(10,11,8,0.97);z-index:2000;align-items:center;justify-content:center;}
+#lightbox.open{display:flex;}
+.lightbox-img-wrap{max-width:90vw;max-height:85vh;display:flex;align-items:center;justify-content:center;}
+.lightbox-img-wrap img{max-width:100%;max-height:85vh;object-fit:contain;}
+.lightbox-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:rgba(255,255,255,0.4);font-size:1.5rem;cursor:pointer;transition:color 0.25s;width:44px;height:44px;display:flex;align-items:center;justify-content:center;}
+.lightbox-close:hover{color:#fff;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(169,138,84,0.1);border:1px solid rgba(169,138,84,0.2);color:var(--gold);width:50px;height:50px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.4rem;transition:all 0.25s;}
+.lightbox-nav:hover{background:var(--gold);color:var(--coal);}
+.lightbox-prev{left:1.5rem;}.lightbox-next{right:1.5rem;}
+.lightbox-counter{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);font-size:0.72rem;letter-spacing:0.15em;color:rgba(255,255,255,0.35);font-weight:500;}
+
+#amenities{background:#fff;}
+.amenities-intro{max-width:600px;margin-bottom:3.5rem;}
+.amenities-intro p{font-size:0.95rem;line-height:1.85;color:rgba(36,38,31,0.65);font-weight:300;}
+.amenities-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(169,138,84,0.15);}
+.amenity-card{background:var(--cream);padding:2.5rem 2rem;transition:background 0.3s;}
+.amenity-card:hover{background:#efeade;}
+.amenity-card--featured{background:var(--cream);border:none;}
+.amenity-card--featured:hover{background:#efeade;}
+.amenity-icon{font-size:2rem;margin-bottom:1rem;display:block;}
+.amenity-name{font-family:var(--font-display);font-size:1.1rem;color:var(--gold);margin-bottom:0.5rem;font-weight:400;letter-spacing:-0.01em;}
+.amenity-desc{font-size:0.8rem;color:rgba(36,38,31,0.55);line-height:1.65;font-weight:300;}
+
+#neighborhood{background:var(--cream);}
+.neighborhood-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.neighborhood-copy p{font-size:0.95rem;line-height:1.9;color:var(--text-mid);font-weight:300;margin-bottom:1.2rem;}
+.walk-scores{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem;}
+.walk-score-item{text-align:center;background:#fff;padding:1.5rem 1rem;border:1px solid rgba(0,0,0,0.06);}
+.ws-number{font-family:var(--font-display);font-size:1.9rem;font-weight:400;color:var(--coal);display:block;line-height:1;margin-bottom:0.25rem;}
+.ws-label{font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);font-weight:500;}
+.neighborhood-highlights{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.nh-item{background:#fff;border-left:2px solid var(--gold);padding:1rem 1.1rem;transition:transform 0.25s;}
+.nh-item:hover{transform:translateX(3px);}
+.nh-item-name{font-size:0.82rem;font-weight:600;color:var(--coal);margin-bottom:0.2rem;}
+.nh-item-desc{font-size:0.72rem;color:var(--text-light);font-weight:300;}
+
+#map-section{background:#fff;padding:0;}
+.map-embed{width:100%;height:440px;border:none;display:block;filter:grayscale(15%) contrast(0.94);}
+
+#schedule{background:#fff;}
+.schedule-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start;}
+.open-house-card{background:var(--cream);border:1px solid rgba(0,0,0,0.07);padding:2rem;display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:1rem;transition:all 0.3s var(--ease);}
+.open-house-card:hover{border-color:rgba(169,138,84,0.35);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.07);}
+.oh-date-box{background:var(--coal);color:#fff;text-align:center;padding:1rem 1.2rem;min-width:76px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.oh-icon{font-size:1.6rem;}
+.oh-type{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;font-weight:700;}
+.oh-time{font-family:var(--font-display);font-size:1.3rem;color:var(--coal);margin-bottom:0.5rem;font-weight:400;}
+.oh-note{font-size:0.78rem;color:var(--text-light);font-weight:300;}
+.schedule-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;}
+.private-showing{background:var(--cream);padding:2.75rem;}
+.ps-title{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--coal);margin-bottom:0.6rem;letter-spacing:-0.01em;}
+.ps-sub{font-size:0.85rem;color:rgba(36,38,31,0.6);font-weight:300;line-height:1.7;margin-bottom:2rem;}
+.ps-contact{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2rem;}
+.ps-contact-item{display:flex;align-items:center;gap:0.75rem;}
+.ps-icon{font-size:0.9rem;opacity:0.6;width:20px;text-align:center;}
+.ps-val{font-size:0.88rem;color:var(--coal);text-decoration:none;font-weight:400;transition:color 0.25s;}
+.ps-val:hover{color:var(--gold);}
+
+#agent{background:var(--cream);}
+.agent-grid{display:grid;grid-template-columns:1fr;max-width:480px;margin:0 auto;background:rgba(169,138,84,0.2);}
+.agent-card{background:var(--cream);padding:3.5rem 3rem;text-align:center;display:flex;flex-direction:column;align-items:center;}
+.agent-presented{font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;font-weight:700;}
+.agent-name{font-family:var(--font-display);font-size:2.2rem;font-weight:400;color:var(--coal);margin-bottom:0.4rem;letter-spacing:-0.01em;line-height:1.1;}
+.agent-title,.agent-brokerage{font-size:0.8rem;color:rgba(36,38,31,0.55);font-weight:300;line-height:1.6;}
+.agent-brokerage{font-style:italic;color:rgba(36,38,31,0.4);}
+.agent-divider{height:1px;background:var(--gold);opacity:0.45;margin:1.5rem auto;width:3rem;}
+.agent-contacts{display:flex;flex-direction:column;gap:0.9rem;}
+.agent-contact-row{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.ac-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(36,38,31,0.5);width:3.5rem;flex-shrink:0;font-weight:500;}
+.ac-val{font-size:0.9rem;color:var(--coal);text-decoration:none;font-weight:400;transition:color 0.25s;}
+.ac-val:hover{color:var(--gold);}
+
+#contact{background:#fff;}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;}
+.contact-intro p{font-size:0.95rem;line-height:1.9;color:var(--text-mid);font-weight:300;margin-bottom:1rem;}
+.contact-tagline{font-family:var(--font-accent);font-size:1.65rem;color:var(--coal);font-style:italic;line-height:1.4;margin-bottom:2.5rem;}
+.form-group{margin-bottom:1.2rem;}
+.form-label{display:block;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.5rem;font-weight:500;}
+.form-input,.form-textarea{width:100%;border:1px solid rgba(0,0,0,0.12);background:#fff;padding:0.85rem 1rem;font-family:var(--font-body);font-size:0.9rem;color:var(--coal);font-weight:300;outline:none;transition:border-color 0.25s;-webkit-appearance:none;}
+.form-input:focus,.form-textarea:focus{border-color:var(--gold);}
+.form-textarea{min-height:110px;resize:vertical;}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+
+.btn-dark{background:var(--coal);color:#fff;border:2px solid var(--coal);padding:0.85rem 2rem;font-family:var(--font-body);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;font-weight:700;text-decoration:none;display:inline-block;transition:all 0.25s var(--ease);}
+.btn-dark:hover{background:var(--gold);border-color:var(--gold);color:var(--coal);}
+.btn-gold{background:var(--gold);color:var(--coal);border:2px solid var(--gold);padding:0.85rem 2rem;font-family:var(--font-body);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;font-weight:700;text-decoration:none;display:inline-block;transition:all 0.25s var(--ease);}
+.btn-gold:hover{background:var(--gold-light);border-color:var(--gold-light);}
+.btn-outline{background:transparent;color:var(--coal);border:2px solid var(--coal);padding:0.85rem 2rem;font-family:var(--font-body);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;font-weight:700;text-decoration:none;display:inline-block;transition:all 0.25s var(--ease);}
+.btn-outline:hover{background:var(--coal);color:#fff;}
+
+#mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--coal);border-top:1px solid var(--border);padding:1rem 1.5rem;z-index:300;gap:0.75rem;}
+#mobile-cta a{flex:1;text-align:center;padding:0.85rem 0.5rem;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;text-decoration:none;display:block;transition:all 0.25s;}
+.mobile-cta-call{background:var(--gold);color:var(--coal);}
+.mobile-cta-call:hover{background:var(--gold-light);}
+.mobile-cta-inquiry{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.2);}
+.mobile-cta-inquiry:hover{border-color:rgba(255,255,255,0.6);}
+
+footer{background:var(--coal);border-top:1px solid rgba(255,255,255,0.04);}
+.footer-inner{max-width:1280px;margin:0 auto;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.footer-brand{font-family:var(--font-accent);font-size:1.1rem;color:rgba(255,255,255,0.55);font-style:italic;}
+.footer-right{display:flex;flex-direction:column;align-items:flex-end;gap:0.4rem;}
+.footer-mls{font-size:0.65rem;color:rgba(255,255,255,0.18);letter-spacing:0.06em;}
+.footer-print{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.18);cursor:pointer;background:none;border:none;transition:color 0.25s;font-family:var(--font-body);font-weight:500;}
+.footer-print:hover{color:var(--gold);}
+.footer-disc{max-width:1280px;margin:0 auto;padding:0 2.5rem 1.5rem;font-size:0.65rem;line-height:1.65;color:rgba(255,255,255,0.13);}
+#form-success{display:none;background:rgba(169,138,84,0.08);border:1px solid rgba(169,138,84,0.3);color:var(--coal);padding:1.25rem 1.5rem;font-size:0.88rem;margin-top:1rem;line-height:1.6;text-align:center;}
+
+@media(max-width:960px){
+  .nav-links{display:none;}
+  .nav-hamburger{display:block;}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(255,255,255,0.99);padding:1rem 0;border-top:1px solid rgba(0,0,0,0.08);}.nav-links.open a{color:rgba(36,38,31,0.65)!important;}
+  .nav-links.open li{border-bottom:1px solid rgba(0,0,0,0.06);}
+  .hero-content{align-items:center;}
+  .hero-price-block{text-align:center;}
+  .hero-cta-group{flex-direction:row;justify-content:center;}
+  .ticker-stat:nth-child(5){display:none;}
+  .section-inner{padding:4rem 1.5rem;}
+  .details-body,.neighborhood-layout,.schedule-layout,.contact-layout{grid-template-columns:1fr;gap:2.5rem;}
+  .features-grid{grid-template-columns:1fr 1fr;}
+  .amenities-grid{grid-template-columns:1fr 1fr;}
+  .agent-grid{grid-template-columns:1fr;}
+  .gallery-header{padding:0 1.5rem 1.5rem;}
+  .carousel-wrap{padding:0 1.5rem;}
+  .gallery-note{padding:0 1.5rem;}
+  .carousel-thumb{min-width:70px;height:48px;}
+  .footer-inner{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem;}
+  .footer-right{align-items:flex-start;}
+  .footer-disc{padding:0 1.5rem 1.5rem;}
+  .form-row-2{grid-template-columns:1fr;}
+  #mobile-cta{display:flex;}
+  body{padding-bottom:80px;}
+}
+@media(max-width:600px){
+  :root{--nav-h:56px;}
+  .section-inner{padding:3rem 1.2rem;}
+  .section-title{font-size:1.65rem;}
+  h1.hero-subaddress{font-size:2.2rem;}
+  .hero-stats-row{gap:1.5rem;flex-wrap:wrap;}
+  .hero-price{font-size:1.9rem;}
+  .hero-cta-group{flex-direction:column;}
+  .stats-ticker-inner{grid-template-columns:repeat(2,1fr);}
+  .ticker-stat:nth-child(3),.ticker-stat:nth-child(4),.ticker-stat:nth-child(5){display:flex;}
+  .ticker-stat:nth-child(1),.ticker-stat:nth-child(2){border-bottom:1px solid rgba(0,0,0,0.07);}
+  .ticker-stat:nth-child(2),.ticker-stat:nth-child(4){border-right:none;}
+  .features-grid{grid-template-columns:1fr;}
+  .amenities-grid{grid-template-columns:1fr;}
+  .neighborhood-highlights{grid-template-columns:1fr;}
+  .walk-scores{grid-template-columns:1fr 1fr 1fr;}
+  .carousel-wrap{padding:0;}
+  .gallery-header{padding:0 1.2rem 1.2rem;}
+  .gallery-note{padding:0 1.2rem;}
+  .carousel-btn{width:40px;height:40px;}
+  .carousel-thumb{min-width:56px;height:38px;}
+  .schedule-actions{flex-direction:column;}
+  .footer-inner{padding:1.5rem 1.2rem;}
+  .footer-disc{padding:0 1.2rem 1.2rem;}
+}
+@media print{
+  #top-nav,#mobile-cta,.hero-scroll-hint,.carousel-btn,.expand-btn,.carousel-dots,.carousel-thumbs,#lightbox{display:none!important;}
+  body{padding-bottom:0;}
+  #hero{min-height:40vh;}
+}
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo gallery">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&#10005;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="lightboxMove(-1)" aria-label="Previous">&#8249;</button>
+  <div class="lightbox-img-wrap" id="lightbox-content"></div>
+  <button class="lightbox-nav lightbox-next" onclick="lightboxMove(1)" aria-label="Next">&#8250;</button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<nav id="top-nav">
+  <div class="nav-inner">
+    <div style="display:flex;align-items:center;justify-content:center;width:100%;position:relative;">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#details">Details</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#neighborhood">Sea Ranch</a></li>
+        <li><a href="#schedule">Availability</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" style="position:absolute;right:0;">&#9776;</button>
+    </div>
+    <div class="nav-wordmark">The Glass House &middot; Sea Ranch</div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Sea Ranch &middot; Sonoma Coast, California</div>
+      <h1 class="hero-subaddress">The Glass House</h1>
+      <div class="hero-city">242 Bluff Reach, Sea Ranch, CA 95497</div>
+    </div>
+    <div class="hero-price-block">
+      <div class="hero-price-label">Vacation Rental</div>
+      <div class="hero-price">Inquire for Rates &amp; Availability</div>
+      <div class="hero-cta-group">
+        <a href="#contact" class="hero-cta hero-cta-primary">Inquire to Book</a>
+        <a href="#gallery" class="hero-cta hero-cta-secondary">View Photos</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<div id="stats-ticker">
+  <div class="stats-ticker-inner">
+    <div class="ticker-stat reveal rd1"><span class="ticker-val">2</span><span class="ticker-label">Bedrooms</span></div>
+    <div class="ticker-stat reveal rd2"><span class="ticker-val">2</span><span class="ticker-label">Baths</span></div>
+    <div class="ticker-stat reveal rd3"><span class="ticker-val">2&ndash;4</span><span class="ticker-label">Guests</span></div>
+    <div class="ticker-stat reveal rd4"><span class="ticker-val" data-target="10">0</span><span class="ticker-label">Mile Ocean View</span></div>
+  </div>
+</div>
+
+<section id="details">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">Property Overview</div>
+    <h2 class="section-title reveal rd1">Architecture in Harmony<br>with the Sea Ranch Coast</h2>
+    <div class="details-body">
+      <div class="details-description reveal rd2">
+        <p>The Glass House sits in an ocean meadow midway along the Sea Ranch coast, its cedar walls and open floor plan an ode to the classic Sea Ranch architectural style. Floor-to-ceiling glass frames a 10-mile stretch of white-water ocean view that changes with every hour of light.</p>
+        <p>This furnished home sleeps 2&ndash;4 guests privately and comfortably across two bedrooms. A double-story living room centers on a sunken inglenook with a stone fireplace, complemented by a loft above and a sheltered view deck with built-in table and benches for outdoor dining.</p>
+        <p>The kitchen has been newly equipped with Bosch appliances &mdash; including a state-of-the-art cooktop and oven, Bosch dishwasher, and GE Profile refrigerator &mdash; ready for coastal cooking after a day on the trails.</p>
+        <p>Just steps from the house, the ocean and walking trails run both north and south along the bluff, with the beach itself only two minutes away.</p>
+      </div>
+      <div class="key-facts reveal rd3">
+        <div class="key-facts-header">Key Details</div>
+        <div class="key-fact-row"><span class="kf-key">Bedrooms</span><span class="kf-val">2, Sleeps 2&ndash;4</span></div>
+        <div class="key-fact-row"><span class="kf-key">Bathrooms</span><span class="kf-val">2</span></div>
+        <div class="key-fact-row"><span class="kf-key">Style</span><span class="kf-val">Classic Sea Ranch</span></div>
+        <div class="key-fact-row"><span class="kf-key">View</span><span class="kf-val">10-Mile White-Water Ocean</span></div>
+        <div class="key-fact-row"><span class="kf-key">Parking</span><span class="kf-val">Two-Car Garage</span></div>
+        <div class="key-fact-row"><span class="kf-key">Internet</span><span class="kf-val">Gigabit Fiber (1GB / 1GB)</span></div>
+        <div class="key-fact-row"><span class="kf-key">Beach Access</span><span class="kf-val">~2 Min Walk</span></div>
+        <div class="mls-badge">Presented by Naomi Glass &middot; DRE #00614791</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">Highlights</div>
+    <h2 class="section-title reveal rd1">What Makes This Home Special</h2>
+    <div class="features-grid">
+      <div class="feature-item reveal"><div class="feature-title">10-Mile Ocean View</div><p class="feature-desc">Floor-to-ceiling windows frame a sweeping white-water view of the Sea Ranch coastline from nearly every room.</p></div>
+      <div class="feature-item reveal rd1"><div class="feature-title">Sunken Fireplace</div><p class="feature-desc">A double-story living room centers on a sunken inglenook with a stone fireplace &mdash; the heart of the house on foggy coastal evenings.</p></div>
+      <div class="feature-item reveal rd2"><div class="feature-title">Sheltered View Deck</div><p class="feature-desc">Built-in table and benches make the deck an all-season spot for outdoor dining above the ocean meadow.</p></div>
+      <div class="feature-item reveal rd3"><div class="feature-title">Chef&rsquo;s Kitchen</div><p class="feature-desc">Newly equipped with Bosch cooktop, oven and dishwasher, plus a GE Profile refrigerator.</p></div>
+      <div class="feature-item reveal rd4"><div class="feature-title">Gigabit Fiber &amp; EV Charging</div><p class="feature-desc">1GB fiber internet, Sonos audio, Apple TV, and a Level 2 EV charger (240V, 40A) in the two-car garage.</p></div>
+      <div class="feature-item reveal rd5"><div class="feature-title">Steps to the Beach</div><p class="feature-desc">Walking trails lead north and south along the bluff, with the beach itself just two minutes away on foot.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="gallery-header">
+    <div>
+      <div style="font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;font-weight:500;">Photo Gallery</div>
+      <div class="gallery-title">The Glass House in Photos</div>
+    </div>
+    <div class="gallery-subtitle">19 Images &middot; Click to Expand</div>
+  </div>
+  <div class="carousel-wrap">
+    <div class="carousel-viewport" id="carouselViewport">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide" onclick="openLightbox(0)"><img src="images/photo-24.jpg" alt="Ocean-View Deck"></div>
+        <div class="carousel-slide" onclick="openLightbox(1)"><img src="images/photo-02.jpg" alt="Living Room from the Deck"></div>
+        <div class="carousel-slide" onclick="openLightbox(2)"><img src="images/photo-01.jpg" alt="Deck &amp; Ocean Meadow"></div>
+        <div class="carousel-slide" onclick="openLightbox(3)"><img src="images/photo-35.jpg" alt="Exterior &amp; Two-Car Garage"></div>
+        <div class="carousel-slide" onclick="openLightbox(4)"><img src="images/photo-21.jpg" alt="Exterior View"></div>
+        <div class="carousel-slide" onclick="openLightbox(5)"><img src="images/photo-17.jpg" alt="Living Room"></div>
+        <div class="carousel-slide" onclick="openLightbox(6)"><img src="images/photo-06.jpg" alt="Living Room &amp; Sunken Fireplace"></div>
+        <div class="carousel-slide" onclick="openLightbox(7)"><img src="images/photo-16.jpg" alt="Dining &amp; Kitchen"></div>
+        <div class="carousel-slide" onclick="openLightbox(8)"><img src="images/photo-09.jpg" alt="Kitchen"></div>
+        <div class="carousel-slide" onclick="openLightbox(9)"><img src="images/photo-12.jpg" alt="Primary Bedroom"></div>
+        <div class="carousel-slide" onclick="openLightbox(10)"><img src="images/photo-11.jpg" alt="Primary Bedroom Window Seat"></div>
+        <div class="carousel-slide" onclick="openLightbox(11)"><img src="images/photo-20.jpg" alt="Bedroom Reading Nook"></div>
+        <div class="carousel-slide" onclick="openLightbox(12)"><img src="images/photo-25.jpg" alt="Bedroom &amp; Ocean View"></div>
+        <div class="carousel-slide" onclick="openLightbox(13)"><img src="images/photo-28.jpg" alt="Guest Bedroom"></div>
+        <div class="carousel-slide" onclick="openLightbox(14)"><img src="images/photo-27.jpg" alt="Loft Bedroom"></div>
+        <div class="carousel-slide" onclick="openLightbox(15)"><img src="images/photo-30.jpg" alt="Loft Landing"></div>
+        <div class="carousel-slide" onclick="openLightbox(16)"><img src="images/photo-33.jpg" alt="Laundry &amp; Bath"></div>
+        <div class="carousel-slide" onclick="openLightbox(17)"><img src="images/pool-2.jpg" alt="Sea Ranch Community Pool"></div>
+        <div class="carousel-slide" onclick="openLightbox(18)"><img src="images/white-barn.jpg" alt="Historic Sea Ranch Barn"></div>
+      </div>
+      <button class="carousel-btn carousel-prev" onclick="carouselMove(-1)" aria-label="Previous">&#8249;</button>
+      <button class="carousel-btn carousel-next" onclick="carouselMove(1)" aria-label="Next">&#8250;</button>
+      <div class="carousel-counter"><span id="carouselCurrent">1</span> / <span id="carouselTotal">19</span></div>
+      <button class="expand-btn" onclick="openLightbox(carouselIdx)" title="View fullscreen">&#8599;</button>
+    </div>
+    <div class="carousel-thumbs" id="carouselThumbs">
+      <div class="carousel-thumb active" onclick="carouselGo(0)"><img src="images/photo-24.jpg" alt="Ocean-View Deck"></div>
+      <div class="carousel-thumb" onclick="carouselGo(1)"><img src="images/photo-02.jpg" alt="Living Room from the Deck"></div>
+      <div class="carousel-thumb" onclick="carouselGo(2)"><img src="images/photo-01.jpg" alt="Deck &amp; Ocean Meadow"></div>
+      <div class="carousel-thumb" onclick="carouselGo(3)"><img src="images/photo-35.jpg" alt="Exterior &amp; Two-Car Garage"></div>
+      <div class="carousel-thumb" onclick="carouselGo(4)"><img src="images/photo-21.jpg" alt="Exterior View"></div>
+      <div class="carousel-thumb" onclick="carouselGo(5)"><img src="images/photo-17.jpg" alt="Living Room"></div>
+      <div class="carousel-thumb" onclick="carouselGo(6)"><img src="images/photo-06.jpg" alt="Living Room &amp; Sunken Fireplace"></div>
+      <div class="carousel-thumb" onclick="carouselGo(7)"><img src="images/photo-16.jpg" alt="Dining &amp; Kitchen"></div>
+      <div class="carousel-thumb" onclick="carouselGo(8)"><img src="images/photo-09.jpg" alt="Kitchen"></div>
+      <div class="carousel-thumb" onclick="carouselGo(9)"><img src="images/photo-12.jpg" alt="Primary Bedroom"></div>
+      <div class="carousel-thumb" onclick="carouselGo(10)"><img src="images/photo-11.jpg" alt="Primary Bedroom Window Seat"></div>
+      <div class="carousel-thumb" onclick="carouselGo(11)"><img src="images/photo-20.jpg" alt="Bedroom Reading Nook"></div>
+      <div class="carousel-thumb" onclick="carouselGo(12)"><img src="images/photo-25.jpg" alt="Bedroom &amp; Ocean View"></div>
+      <div class="carousel-thumb" onclick="carouselGo(13)"><img src="images/photo-28.jpg" alt="Guest Bedroom"></div>
+      <div class="carousel-thumb" onclick="carouselGo(14)"><img src="images/photo-27.jpg" alt="Loft Bedroom"></div>
+      <div class="carousel-thumb" onclick="carouselGo(15)"><img src="images/photo-30.jpg" alt="Loft Landing"></div>
+      <div class="carousel-thumb" onclick="carouselGo(16)"><img src="images/photo-33.jpg" alt="Laundry &amp; Bath"></div>
+      <div class="carousel-thumb" onclick="carouselGo(17)"><img src="images/pool-2.jpg" alt="Sea Ranch Community Pool"></div>
+      <div class="carousel-thumb" onclick="carouselGo(18)"><img src="images/white-barn.jpg" alt="Historic Sea Ranch Barn"></div>
+    </div>
+    <div class="carousel-dots" id="carouselDots">
+      <button class="carousel-dot active" onclick="carouselGo(0)"></button>
+      <button class="carousel-dot" onclick="carouselGo(1)"></button>
+      <button class="carousel-dot" onclick="carouselGo(2)"></button>
+      <button class="carousel-dot" onclick="carouselGo(3)"></button>
+      <button class="carousel-dot" onclick="carouselGo(4)"></button>
+      <button class="carousel-dot" onclick="carouselGo(5)"></button>
+      <button class="carousel-dot" onclick="carouselGo(6)"></button>
+      <button class="carousel-dot" onclick="carouselGo(7)"></button>
+      <button class="carousel-dot" onclick="carouselGo(8)"></button>
+      <button class="carousel-dot" onclick="carouselGo(9)"></button>
+      <button class="carousel-dot" onclick="carouselGo(10)"></button>
+      <button class="carousel-dot" onclick="carouselGo(11)"></button>
+      <button class="carousel-dot" onclick="carouselGo(12)"></button>
+      <button class="carousel-dot" onclick="carouselGo(13)"></button>
+      <button class="carousel-dot" onclick="carouselGo(14)"></button>
+      <button class="carousel-dot" onclick="carouselGo(15)"></button>
+      <button class="carousel-dot" onclick="carouselGo(16)"></button>
+      <button class="carousel-dot" onclick="carouselGo(17)"></button>
+      <button class="carousel-dot" onclick="carouselGo(18)"></button>
+    </div>
+  </div>
+</section>
+
+<section id="amenities">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal" style="color:rgba(169,138,84,0.75);">Community Amenities</div>
+    <h2 class="section-title section-title--light reveal rd1">Life at Sea Ranch</h2>
+    <div class="amenities-intro reveal rd2">
+      <p>Sea Ranch offers an unforgettable escape for those who love the outdoors &mdash; a rugged coast of trails, headlands, coves, beaches and tide pools, all shared by a close-knit community of just a few thousand seasonal and full-time residents.</p>
+    </div>
+    <div class="amenities-grid">
+      <div class="amenity-card amenity-card--featured reveal"><div class="amenity-name">Seaside Pool &amp; Sauna</div><p class="amenity-desc">One of three Sea Ranch recreation centers, with a heated pool, sauna, and tennis courts within walking distance.</p></div>
+      <div class="amenity-card reveal rd1"><div class="amenity-name">18-Hole Golf Course</div><p class="amenity-desc">The Robert Muir Graves&ndash;designed course winds along the coastal bluffs, open to guests and residents.</p></div>
+      <div class="amenity-card reveal rd2"><div class="amenity-name">Hiking &amp; Biking Trails</div><p class="amenity-desc">Miles of trails run through forest and meadow, with headlands and tide pools to explore in every direction.</p></div>
+      <div class="amenity-card reveal rd3"><div class="amenity-name">Beach &amp; Surf Fishing</div><p class="amenity-desc">The beach is two minutes away on foot, with excellent surf and rock fishing along the coast.</p></div>
+      <div class="amenity-card reveal rd4"><div class="amenity-name">Wildlife Viewing</div><p class="amenity-desc">Deer, fox, rabbit, and mountain quail are common; bird and whale-watching are year-round pastimes.</p></div>
+      <div class="amenity-card reveal rd5"><div class="amenity-name">Gigabit Fiber Internet</div><p class="amenity-desc">High-speed 1GB fiber internet keeps the house connected, even at the edge of the Sonoma Coast.</p></div>
+      <div class="amenity-card reveal"><div class="amenity-name">EV Charging</div><p class="amenity-desc">A Level 2, 240V/40A charging system is available for guests with electric vehicles.</p></div>
+      <div class="amenity-card reveal rd1"><div class="amenity-name">Children&rsquo;s Playground</div><p class="amenity-desc">A playground and easy trips to Fort Ross and Gualala Point Regional Park round out the family offering.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="neighborhood">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">Sonoma Coast &middot; Mendocino County Line</div>
+    <h2 class="section-title reveal rd1">Sea Ranch &amp; the Sonoma Coast</h2>
+    <div class="neighborhood-layout">
+      <div>
+        <div class="walk-scores reveal rd2">
+          <div class="walk-score-item"><span class="ws-number">110 mi</span><div class="ws-label">To San Francisco</div></div>
+          <div class="walk-score-item"><span class="ws-number">~1 hr</span><div class="ws-label">To Mendocino</div></div>
+          <div class="walk-score-item"><span class="ws-number">2 min</span><div class="ws-label">To the Beach</div></div>
+        </div>
+        <div class="neighborhood-copy reveal rd3">
+          <p>Sea Ranch is only 110 miles north of San Francisco, with the artisan town of Mendocino about an hour further up the coast. Historic Fort Bragg, the sparkling-wine country of Anderson Valley, and Sonoma Valley&rsquo;s wineries are all within easy reach.</p>
+          <p>Nearby restaurants, including the Sea Ranch Lodge and St. Orres, offer fine coastal dining just minutes from the house.</p>
+        </div>
+      </div>
+      <div class="neighborhood-highlights reveal rd2">
+        <div class="nh-item"><div class="nh-item-name">Sea Ranch Lodge</div><div class="nh-item-desc">Fine dining &amp; ocean-view bar</div></div>
+        <div class="nh-item"><div class="nh-item-name">Gualala River</div><div class="nh-item-desc">Steelhead fishing nearby</div></div>
+        <div class="nh-item"><div class="nh-item-name">Fort Ross</div><div class="nh-item-desc">Historic state park excursion</div></div>
+        <div class="nh-item"><div class="nh-item-name">Anderson Valley</div><div class="nh-item-desc">Sparkling wine country</div></div>
+        <div class="nh-item"><div class="nh-item-name">Sonoma Valley</div><div class="nh-item-desc">World-class wine country</div></div>
+        <div class="nh-item"><div class="nh-item-name">Mendocino</div><div class="nh-item-desc">Artisan coastal village</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="map-section">
+  <iframe src="https://www.google.com/maps?q=242+Bluff+Reach,+Sea+Ranch,+CA+95497&output=embed" class="map-embed" allowfullscreen="" loading="lazy" title="242 Bluff Reach, Sea Ranch map"></iframe>
+</section>
+
+<section id="schedule">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">Availability</div>
+    <h2 class="section-title reveal rd1">Plan Your Stay</h2>
+    <div class="schedule-layout">
+      <div>
+        <div class="open-house-card reveal rd2">
+          <div class="oh-date-box"><span class="oh-icon">&#127968;</span></div>
+          <div><div class="oh-type">Nightly &amp; Weekly Stays</div><div class="oh-time">Flexible Check-In</div><div class="oh-note">The Glass House is available for short-term vacation stays year-round. Reach out for current rates and open dates.</div></div>
+        </div>
+        <div class="open-house-card reveal rd3">
+          <div class="oh-date-box"><span class="oh-icon">&#128666;</span></div>
+          <div><div class="oh-type">Two-Car Garage</div><div class="oh-time">EV Charging Included</div><div class="oh-note">Level 2, 240V/40A charging is available on-site for guests arriving by electric vehicle.</div></div>
+        </div>
+        <div class="schedule-actions reveal rd5">
+          <a href="#contact" class="btn-outline">Request Availability</a>
+        </div>
+      </div>
+      <div class="private-showing reveal rd2">
+        <div class="ps-title">Ready to Book?</div>
+        <p class="ps-sub">Reach out any time for current availability, nightly rates, and booking details &mdash; Naomi is happy to help plan your Sea Ranch stay.</p>
+        <div class="ps-contact">
+          <div class="ps-contact-item"><span class="ps-icon">&#128222;</span><a href="tel:+14157163812" class="ps-val">(415) 716-3812</a></div>
+          <div class="ps-contact-item"><span class="ps-icon">&#9993;</span><a href="mailto:naomiglass16@gmail.com" class="ps-val">naomiglass16@gmail.com</a></div>
+        </div>
+        <a href="#contact" class="btn-gold">Send an Inquiry &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="agent">
+  <div class="section-inner" style="padding-top:0;padding-bottom:0;">
+    <div class="agent-grid">
+      <div class="agent-card reveal">
+        <div class="agent-presented">Presented By</div>
+        <div class="agent-name">Naomi Glass</div>
+        <div class="agent-title">REALTOR&reg; &middot; DRE #00614791</div>
+        <div class="agent-brokerage">Coldwell Banker, San Francisco</div>
+        <div class="agent-divider"></div>
+        <div class="agent-contacts">
+          <div class="agent-contact-row"><span class="ac-label">Mobile</span><a href="tel:+14157163812" class="ac-val">(415) 716-3812</a></div>
+          <div class="agent-contact-row"><span class="ac-label">Email</span><a href="mailto:naomiglass16@gmail.com" class="ac-val">naomiglass16@gmail.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal" style="justify-content:center;">Get in Touch</div>
+    <h2 class="section-title reveal rd1" style="text-align:center;margin-bottom:0.5rem;">Interested in Staying Here?</h2>
+    <div class="contact-layout" style="max-width:960px;margin:0 auto;">
+      <div class="contact-intro reveal rd2">
+        <p>Whether you&rsquo;d like to check available dates, ask about rates, or learn more about The Glass House and the Sea Ranch community &mdash; we&rsquo;re here to help.</p>
+        <p>Naomi responds promptly to all inquiries.</p>
+        <div style="margin-top:2rem;display:flex;flex-direction:column;gap:0.75rem;">
+          <a href="tel:+14157163812" class="btn-outline">&#128222; Call (415) 716-3812</a>
+          <a href="mailto:naomiglass16@gmail.com" class="btn-outline">&#9993; Send an Email</a>
+        </div>
+      </div>
+      <form id="contact-form" onsubmit="handleSubmit(event)" class="reveal rd3">
+        <div class="form-row-2">
+          <div class="form-group"><label class="form-label">Name *</label><input name="name" class="form-input" type="text" required placeholder="Your full name"></div>
+          <div class="form-group"><label class="form-label">Phone</label><input name="phone" class="form-input" type="tel" placeholder="(415) 000-0000"></div>
+        </div>
+        <div class="form-group"><label class="form-label">Email *</label><input name="email" class="form-input" type="email" required placeholder="your@email.com"></div>
+        <div class="form-group"><label class="form-label">Message</label><textarea name="message" class="form-textarea" placeholder="I'm interested in the following dates..."></textarea></div>
+        <button type="submit" class="btn-gold">&#9993; Send Message</button>
+        <div id="form-success">&#10003;&nbsp; Thank you! Your email app should have opened with your message ready to send. If it didn&rsquo;t, please email naomiglass16@gmail.com directly.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="mobile-cta">
+  <a href="tel:+14157163812" class="mobile-cta-call">&#128222; Call Now</a>
+  <a href="#contact" class="mobile-cta-inquiry">&#9993; Inquire</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="#hero" class="footer-brand">The Glass House &middot; Sea Ranch</a>
+    <div class="footer-right">
+      <div class="footer-mls">DRE #00614791</div>
+      <button class="footer-print" onclick="window.print()">&#128424; Print Listing</button>
+    </div>
+  </div>
+  <div class="footer-disc">Information deemed reliable but not guaranteed. Rates and availability are subject to change without notice. Guests are responsible for verifying all information they deem important prior to booking. Equal Housing Opportunity.</div>
+</footer>
+
+<script>
+const progressBar = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  document.getElementById('top-nav').classList.toggle('scrolled', window.scrollY > 10);
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (window.scrollY / max * 100) + '%';
+}, {passive:true});
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    entry.target.querySelectorAll('[data-target]').forEach(el => {
+      if (!el.dataset.counted) animateCounter(el);
+    });
+  });
+}, {threshold:0.15});
+document.querySelectorAll('.reveal, .ticker-stat').forEach(el => io.observe(el));
+
+function animateCounter(el) {
+  el.dataset.counted = '1';
+  const target = parseInt(el.dataset.target);
+  const start = performance.now();
+  const dur = 1000;
+  const update = (now) => {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(ease * target);
+    if (p < 1) requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
+
+let carouselIdx = 0;
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const carouselDotsEls = document.querySelectorAll('.carousel-dot');
+const carouselThumbsEls = document.querySelectorAll('.carousel-thumb');
+const carouselTotal = carouselSlides.length;
+
+function carouselUpdate() {
+  const slideW = document.getElementById('carouselViewport').offsetWidth;
+  document.getElementById('carouselTrack').style.transform = 'translateX(-' + (carouselIdx * slideW) + 'px)';
+  document.getElementById('carouselCurrent').textContent = carouselIdx + 1;
+  carouselDotsEls.forEach((d,i) => d.classList.toggle('active', i===carouselIdx));
+  carouselThumbsEls.forEach((t,i) => t.classList.toggle('active', i===carouselIdx));
+  carouselThumbsEls[carouselIdx]?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+function carouselMove(dir) { carouselIdx = (carouselIdx+dir+carouselTotal)%carouselTotal; carouselUpdate(); }
+function carouselGo(idx) { carouselIdx=idx; carouselUpdate(); }
+
+let touchStartX = 0;
+const vp = document.getElementById('carouselViewport');
+vp.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+vp.addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 40) carouselMove(diff > 0 ? 1 : -1);
+});
+
+const lbSlides = [
+  {src:'images/photo-24.jpg',label:'Ocean-View Deck'},
+  {src:'images/photo-02.jpg',label:'Living Room from the Deck'},
+  {src:'images/photo-01.jpg',label:'Deck & Ocean Meadow'},
+  {src:'images/photo-35.jpg',label:'Exterior & Two-Car Garage'},
+  {src:'images/photo-21.jpg',label:'Exterior View'},
+  {src:'images/photo-17.jpg',label:'Living Room'},
+  {src:'images/photo-06.jpg',label:'Living Room & Sunken Fireplace'},
+  {src:'images/photo-16.jpg',label:'Dining & Kitchen'},
+  {src:'images/photo-09.jpg',label:'Kitchen'},
+  {src:'images/photo-12.jpg',label:'Primary Bedroom'},
+  {src:'images/photo-11.jpg',label:'Primary Bedroom Window Seat'},
+  {src:'images/photo-20.jpg',label:'Bedroom Reading Nook'},
+  {src:'images/photo-25.jpg',label:'Bedroom & Ocean View'},
+  {src:'images/photo-28.jpg',label:'Guest Bedroom'},
+  {src:'images/photo-27.jpg',label:'Loft Bedroom'},
+  {src:'images/photo-30.jpg',label:'Loft Landing'},
+  {src:'images/photo-33.jpg',label:'Laundry & Bath'},
+  {src:'images/pool-2.jpg',label:'Sea Ranch Community Pool'},
+  {src:'images/white-barn.jpg',label:'Historic Sea Ranch Barn'},
+];
+let lbIdx = 0;
+function openLightbox(idx) {
+  lbIdx = idx; updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lightboxMove(dir) {
+  lbIdx = (lbIdx+dir+lbSlides.length)%lbSlides.length; updateLightbox();
+}
+function updateLightbox() {
+  const s = lbSlides[lbIdx];
+  document.getElementById('lightbox-content').innerHTML =
+    '<img src="'+s.src+'" alt="'+s.label+'" style="max-width:100%;max-height:85vh;object-fit:contain;">';
+  document.getElementById('lightbox-counter').textContent = (lbIdx+1) + ' / ' + lbSlides.length;
+}
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeLightbox();
+});
+
+document.addEventListener('keydown', e => {
+  if (document.getElementById('lightbox').classList.contains('open')) {
+    if (e.key==='ArrowLeft') lightboxMove(-1);
+    if (e.key==='ArrowRight') lightboxMove(1);
+    if (e.key==='Escape') closeLightbox();
+  } else {
+    if (e.key==='ArrowLeft') carouselMove(-1);
+    if (e.key==='ArrowRight') carouselMove(1);
+  }
+});
+
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('#nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open'));
+});
+
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 90) current = s.id; });
+  document.querySelectorAll('#nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}, {passive:true});
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const name = form.querySelector('[name="name"]').value.trim();
+  const email = form.querySelector('[name="email"]').value.trim();
+  const phone = form.querySelector('[name="phone"]').value.trim();
+  const message = form.querySelector('[name="message"]').value.trim();
+  const subject = encodeURIComponent('Sea Ranch Inquiry: The Glass House');
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n' +
+    'Phone: ' + phone + '\n\n' +
+    message
+  );
+  window.location.href = 'mailto:naomiglass16@gmail.com?subject=' + subject + '&body=' + body;
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
